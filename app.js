@@ -45,8 +45,8 @@ const allArticlesRouter = require('./routes/all-articles');
   mongoose.connect(process.env.DATABASE_URL)
     .then(result => {
       // process.env.PORT will be add by the online server
-      app.listen(process.env.PORT || port, () => {
-        console.log(`${require('./package.json').name} app listening at http://localhost:${port}`);
+      app.listen(process.env.PORT || port, (req) => {
+        console.log(`${require('./package.json').name} app listening on port ${process.env.PORT || port}`);
         console.log("Mongoose Connected");
       });
     }).catch(err => {

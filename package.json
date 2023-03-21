@@ -23,11 +23,15 @@
   "license": "ISC",
   "keywords": [
     "mongoose",
-    "express",
+    "express.js",
     "nodejs",
     "mongodb",
     "mvc",
-    "api"
+    "api",
+    "ejs",
+    "javascript",
+    "css",
+    "html"
   ],
   "engines": {
     "node": "18.7.0"
