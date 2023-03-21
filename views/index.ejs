@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- calling the shared file head.ejs -->
+<!-- it have our head tag -->
+<%- include('./partials/head') %>
+
+  <body>
+    <%- include('./partials/header') %>
+      <section class="articles">
+        <h2>Trending Articles 🔥</h2>
+        <div class="container"><% // the code inside this ejs tag below is node.js code // it repeats the html tags below
+            articles.forEach(article=> {
+            %>
+            <article>
+              <h3>
+                <%= article.title%>
+              </h3>
+              <p>
+                <%=article.summary%>
+              </p>
+              <a href="/all-articles/article-details/<%= article.id%>">show more...</a>
+            </article><% })//the braces below are the continuation of the node.js code above in the previous ejs code }) %></div>
+      </section>
+      <%- include('./partials/footer') %>
+  </body>
+
+</html>

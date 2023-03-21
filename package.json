@@ -1,0 +1,44 @@
+{
+  "scripts": {
+    "start": "node app.js",
+    "watch": "nodemon --ext js,ejs --ignore public"
+  },
+  "name": "trendy-article",
+  "version": "1.0.0",
+  "description": "Training back-end website",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "mongoose": "^7.0.1",
+    "dotenv":"^16.0.3"
+  },
+  "devDependencies": {
+    "ejs-lint": "^2.0.0",
+    "livereload": "^0.9.3",
+    "connect-livereload": "^0.6.1",
+    "nodemon": "^2.0.21"
+  },
+  "license": "ISC",
+  "keywords": [
+    "mongoose",
+    "express",
+    "nodejs",
+    "mongodb",
+    "mvc",
+    "api"
+  ],
+  "engines": {
+    "node": "18.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nabil-Nasr/trendy-article.git"
+  },
+  "author": "Nabil-Nasr",
+  "bugs": {
+    "url": "https://github.com/Nabil-Nasr/trendy-article/issues"
+  },
+  "homepage": "https://github.com/Nabil-Nasr/trendy-article#readme"
+}

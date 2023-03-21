@@ -1,0 +1,54 @@
+/* form */
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form .area {
+	display: grid;
+	margin-bottom: 35px;
+	width: min(80%, 500px);
+}
+
+form label {
+	font-size: 22px;
+	margin-bottom: 8px;
+	color: var(--article-summary-color);
+	cursor: pointer;
+}
+
+form input[type="text"],
+form textarea {
+	padding: 10px;
+	border-radius: calc(var(--main-radius) / 2.2);
+	font-size: 18px;
+	outline: none;
+	width: 100%;
+}
+
+form textarea {
+	resize: none;
+	height: 200px;
+}
+
+form input[type="submit"] {
+	padding: 10px;
+	border-radius: calc(var(--main-radius) /2.2);
+	border: none;
+	font-size: 20px;
+	background-color: #b13120;
+	color: white;
+	cursor: pointer;
+	transition: var(--main-transition);
+}
+
+form input[type="submit"]:hover {
+	background-color: #92281a;
+	transform: scale(1.1);
+}
+
+form input[type="submit"]:active {
+	background-color: #db3d28;
+	transform: scale(0.9);
+}

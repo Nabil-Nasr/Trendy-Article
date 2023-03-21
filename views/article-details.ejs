@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+
+  <body>
+    <%- include('./partials/header') %>
+
+      <section>
+        <h2>
+          <%= article.title %>
+        </h2>
+        <p>
+          <%= article.body %>
+        </p>
+        <button data-article-id="<%= article.id %>">Delete this article</button>
+      </section>
+
+      <%- include('./partials/footer') %>
+  </body>
+
+</html>

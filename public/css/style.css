@@ -1,0 +1,181 @@
+/* global variables */
+:root {
+	--main-color: #3C4A5B;
+	--secondary-color: rgb(0, 217, 255);
+	--section-padding: 60px;
+	--main-radius: 15px;
+	--section-background: white;
+	--main-transition: 0.3s;
+	--article-summary-color: #777;
+	--article-body-color: black;
+	--article-hover-color: red;
+}
+
+.dark-mode:root {
+	--main-color: #A45174;
+	--secondary-color: #e58fff;
+	--section-background: #443534;
+	--article-summary-color: rgba(255, 255, 255, 0.918);
+	--article-body-color: rgb(247, 247, 247);
+	--article-hover-color: rgb(0, 255, 157);
+}
+
+/* global rules*/
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	-webkit-scroll-behavior: smooth;
+	-o-scroll-behavior: smooth;
+	-moz-scroll-behavior: smooth;
+	-ms-scroll-behavior: smooth;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: var(--section-background);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+	margin-inline: auto;
+	padding-inline: 15px;
+}
+
+/* as same as  min-width:768px*/
+@media (min-width : 768px) {
+	.container {
+		width: 750px;
+	}
+}
+
+@media (min-width:992px) {
+	.container {
+		width: 970px;
+	}
+}
+
+@media (min-width:1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+
+/* header */
+header {
+	background-color: var(--main-color);
+	padding: 25px;
+	border-radius: 0 0 75px 75px;
+	box-shadow: 0 1px 0 0 white;
+	font-size: 18px;
+}
+
+header ul {
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+}
+
+header ul a {
+	text-decoration: none;
+	color: white;
+	padding: 8px 5px;
+	transition: var(--main-transition);
+	border-radius: var(--main-radius);
+}
+
+header ul a:hover {
+	color: var(--secondary-color);
+	text-shadow: 1px 1px 10px var(--secondary-color),
+		-1px -1px 10px var(--secondary-color);
+	border: 1px solid currentColor;
+	box-shadow: 1px 1px 10px 0px var(--secondary-color);
+}
+
+/* .articles */
+section {
+	margin: var(--section-padding) 20px;
+	box-shadow: 0px 0px 30px -10px var(--main-color);
+	border-radius: var(--main-radius);
+	padding: calc(var(--section-padding) - 20px);
+}
+
+section h2 {
+	margin-bottom: 40px;
+	margin-inline: auto;
+	background-color: var(--main-color);
+	color: white;
+	width: fit-content;
+	padding: 10px 120px;
+	border-radius: var(--main-radius);
+	text-align: center;
+}
+
+.articles .container {
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	max-width: 100%;
+}
+
+.articles .container:empty::before {
+	content: "No Articles For Now 🚫";
+	text-align: center;
+	font-size: 28px;
+	color: var(--article-body-color);
+}
+
+section article {
+	padding: 10px;
+	color: var(--article-summary-color);
+	border: 1px solid;
+	border-radius: calc(var(--main-radius) / 2);
+	transition: var(--main-transition);
+}
+
+section article:hover {
+	box-shadow: 0 0 5px -2px var(--article-hover-color),
+		7px 0px 0px var(--article-hover-color) inset;
+	transform: scaleX(1.02);
+	transform-origin: left;
+	padding-left: 12px;
+}
+
+section article h3 {
+	padding: 20px;
+	text-align: center;
+	font-weight: normal;
+}
+
+section article:hover h3 {
+	font-weight: bold;
+}
+
+section article a {
+	float: right;
+	color: rgb(92, 65, 243);
+}
+
+/* footer */
+footer {
+	background-color: var(--main-color);
+	padding: 25px;
+	border-radius: 75px 75px 0 0;
+	box-shadow: 0 -1px 0 0 white;
+	color: white;
+	text-align: center;
+	margin-top: auto;
+	font-size: 18px;
+}
+
+footer a {
+	color: rgb(0, 255, 128);
+}
