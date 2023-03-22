@@ -1,21 +1,23 @@
-let mode=document.querySelector(`.mode`)
-let root=document.querySelector(`:root`)
+let mode = document.querySelector(`.mode`);
+let root = document.querySelector(`:root`);
 
 {// ================== Add dark-mode ===================
-if(localStorage.mode == "dark-mode")
-    root.classList.add(localStorage.mode)
-else
-    root.classList.add("light-mode")
+	if (localStorage.mode == "light-mode")
+		root.classList.add(localStorage.mode);
+	else
+		root.classList.add("dark-mode");
 
-mode.addEventListener("click", (eve)=>{
-    eve.preventDefault();
-    if(root.classList.contains(`light-mode`)){
-        localStorage.mode="dark-mode";
-        root.classList.replace("light-mode", "dark-mode")
-    }else{
-        localStorage.mode="light-mode";
-        root.classList.replace("dark-mode","light-mode")
-    }
-})
+	mode.addEventListener("click", (eve) => {
+		eve.preventDefault();
+		if (root.classList.contains(`dark-mode`)) {
+			localStorage.mode = "light-mode";
+			root.classList.remove("dark-mode");
+			root.classList.add("light-mode");
+		} else {
+			localStorage.mode = "dark-mode";
+			root.classList.remove("light-mode");
+			root.classList.add("dark-mode");
+		}
+	});
 }
 

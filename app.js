@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 // adds security for express app
 const helmet = require('helmet');
-const port = 3000;
+const port = process.env.PORT || 3000;
 // for using ejs template engine
 app.set("view engine", "ejs");
 // for using static files
@@ -45,8 +45,8 @@ const allArticlesRouter = require('./routes/all-articles');
   mongoose.connect(process.env.DATABASE_URL)
     .then(result => {
       // process.env.PORT will be add by the online server
-      app.listen(process.env.PORT || port, (req) => {
-        console.log(`${require('./package.json').name} app listening on port ${process.env.PORT || port}`);
+      app.listen(port, (req) => {
+        console.log(`${require('./package.json').name} app listening on port ${port}`);
         console.log("Mongoose Connected");
       });
     }).catch(err => {
