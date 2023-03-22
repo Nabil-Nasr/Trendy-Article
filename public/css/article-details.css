@@ -1,6 +1,7 @@
 section p {
   font-size: 22px;
   color: var(--article-body-color);
+  word-wrap:break-word;
 }
 
 button {
@@ -8,20 +9,24 @@ button {
   border-radius: calc(var(--main-radius) /2.2);
   border: none;
   font-size: 20px;
-  background-color: #b13120;
+  background-color: rgba(216, 6, 6, 0.842);
   color: white;
   cursor: pointer;
   transition: var(--main-transition);
   transform-origin: left;
   margin-top: 30px;
 }
-
+@media (max-width:768px){
+  button {
+    font-size: 16px;
+  }
+}
 button:hover {
-  background-color: #92281a;
+  background-color: rgba(226, 8, 8, 0.904);
   transform: scale(1.1);
 }
 
 button:active {
-  background-color: #db3d28;
+  background-color: rgba(255, 0, 0, 0.726);
   transform: scale(0.9);
 }

@@ -1,5 +1,6 @@
 // this file has the most used functions (controls the project)
 
+// importing Article model from articleSchema
 const Article = require('../models/articleSchema');
 
 // exports is the object variable that is exported by default

@@ -13,7 +13,7 @@ app.set("view engine", "ejs");
 app.use(express.static('public'));
 //  for using post request in html form (parsing it's)
 app.use(express.urlencoded({ extended: true }));
-// importing Article model from articleSchema
+// all-articles router
 const allArticlesRouter = require('./routes/all-articles');
 
 //for live reload
@@ -79,7 +79,7 @@ app.get("/new-article", (req, res) => {
 
 // when the path is wrong this page called
 app.get("/not-found", (req, res) => {
-  res.send("This page not found");
+  res.render('not-found', { externalCSSPath: "", externalJSPath: "", pageTitle: "Error 404" });
 });
 app.use((req, res) => {
   res.status(404).redirect("/not-found");

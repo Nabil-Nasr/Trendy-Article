@@ -6,9 +6,13 @@
 	--main-radius: 15px;
 	--section-background: white;
 	--main-transition: 0.3s;
-	--article-summary-color: #777;
+	--article-summary-color: #333;
 	--article-body-color: black;
 	--article-hover-color: red;
+	--link-color:rgb(96, 152, 236);
+	--button-background:rgb(238, 53, 53);
+	--button-background-hover:rgb(240, 99, 99);
+	--button-background-active:rgb(201, 48, 48);
 }
 
 .dark-mode:root {
@@ -18,6 +22,10 @@
 	--article-summary-color: rgba(255, 255, 255, 0.918);
 	--article-body-color: rgb(247, 247, 247);
 	--article-hover-color: rgb(0, 255, 157);
+	--link-color:rgb(0, 255, 128);
+	--button-background:rgb(226, 45, 13);
+	--button-background-hover:rgb(224, 61, 33);
+	--button-background-active:rgb(209, 42, 13);
 }
 
 /* global rules*/
@@ -81,6 +89,9 @@ header ul {
 	display: flex;
 	justify-content: space-around;
 	list-style: none;
+	text-align: center;
+	flex-wrap: wrap;
+	row-gap: 15px;
 }
 
 header ul a {
@@ -113,7 +124,8 @@ section h2 {
 	background-color: var(--main-color);
 	color: white;
 	width: fit-content;
-	padding: 10px 120px;
+	padding: 10px min(120px,20%);
+	/* max-width: 100%; */
 	border-radius: var(--main-radius);
 	text-align: center;
 }
@@ -127,6 +139,10 @@ section h2 {
 
 .articles .container:empty::before {
 	content: "No Articles For Now 🚫";
+}
+
+.articles .container:empty::before,
+section.not-found {
 	text-align: center;
 	font-size: 28px;
 	color: var(--article-body-color);
@@ -158,9 +174,17 @@ section article:hover h3 {
 	font-weight: bold;
 }
 
+section article p {
+	word-wrap: break-word;
+	display:-webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
 section article a {
 	float: right;
-	color: rgb(92, 65, 243);
+	color: var(--link-color);
 }
 
 /* footer */
@@ -176,5 +200,5 @@ footer {
 }
 
 footer a {
-	color: rgb(0, 255, 128);
+	color: var(--link-color);
 }
