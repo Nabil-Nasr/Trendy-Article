@@ -72,14 +72,14 @@ app.use("/all-articles", allArticlesRouter);
 
 app.get("/new-article", (req, res) => {
   // injecting the second parameter object into new-article.ejs file
-  res.render("new-article", { externalCSSPath: "/css/new-article.css", externalJSPath: "", pageTitle: "New Article" });
+  res.render("new-article", { externalCSSPath: "/css/new-article.css",pageTitle: "New Article" });
 });
 
 
 
 // when the path is wrong this page called
 app.get("/not-found", (req, res) => {
-  res.render('not-found', { externalCSSPath: "", externalJSPath: "", pageTitle: "Error 404" });
+  res.render('not-found', {pageTitle: "Error 404"});
 });
 app.use((req, res) => {
   res.status(404).redirect("/not-found");

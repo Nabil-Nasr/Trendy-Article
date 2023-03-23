@@ -12,7 +12,7 @@ exports.article_index_get = (req, res) => {
 	Article.find()
 		.then(result => {
 			// render method reads direct from views folder
-			res.render("index", { externalCSSPath: "", externalJSPath: "", pageTitle: "Trending 🔥", articles: result });
+			res.render("index", {pageTitle: "Trending 🔥", articles: result });
 		}).catch(err => {
 			console.log(err);
 		});

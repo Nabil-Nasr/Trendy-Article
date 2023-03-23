@@ -2,14 +2,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- we used style.css not static/style.css
-    because we have set static files location in app.js so we are now using public like root -->
+  <%# we used style.css not static/style.css
+    because we have set static files location in app.js so we are now using public like root %>
   <link rel="stylesheet" href="/css/style.css">
-  <!-- with this ejs tag below we are using it to inject variables as it is (the type not converted to string) by including it (like another ejs file) or injecting html from express.js render method object parameter -->
-  <link rel="stylesheet" href="<%= externalCSSPath %>">
+
+  <%# runs only if there is a variable with that name%>
+  <% if(locals.externalCSSPath){ %>
+    <link rel="stylesheet" href="<%= externalCSSPath %>">
+    <% } %>
+    
   <script defer src="/js/main.js"></script>
+
+  <% if(locals.externalJSPath){ %>
   <script defer src="<%= externalJSPath %>"></script>
-  <!-- with this ejs tag below we inject string from passed variable into express.js render method -->
+  <%} %>
+  
+  <%# with this ejs tag below we inject string from passed variable into express.js render method %>
   <title>
     <%= pageTitle %>
   </title>
