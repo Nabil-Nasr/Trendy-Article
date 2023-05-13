@@ -10,11 +10,11 @@
         <div class="container"><% // the code inside this ejs tag below is node.js code // it repeats the html tags below
             articles.forEach(article=> {
             %>
-            <article dir="auto">
-              <h3>
+            <article>
+              <h3 dir="auto">
                 <%= article.title%>
               </h3>
-              <p>
+              <p dir="auto">
                 <%=article.summary%>
               </p>
               <a href="/all-articles/article-details/<%= article.id%>">show more...</a>

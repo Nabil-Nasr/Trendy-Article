@@ -5,11 +5,11 @@
   <body>
     <%- include('./partials/header') %>
 
-      <section dir="auto">
-        <h2>
+      <section>
+        <h2 dir="auto">
           <%= article.title %>
         </h2>
-        <p>
+        <p dir="auto">
           <%= article.body %>
         </p>
         <button data-article-id="<%= article.id %>">Delete this article</button>
